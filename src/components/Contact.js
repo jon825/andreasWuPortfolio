@@ -7,7 +7,7 @@ class Contact extends Component {
   render() {
     return (
 
-      <div className="App">
+      <div className="App container ">
         <Header />
 
 

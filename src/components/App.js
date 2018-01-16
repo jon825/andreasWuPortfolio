@@ -2,64 +2,72 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Photography from "./Photography";
 import Contact from "./Contact";
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 import "../App.css";
+
+
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      hover:false
-    }
+      loading:true
+    };
 
-    this.mouseOver = this.mouseOver.bind(this);
-    this.mouseOut = this.mouseOut.bind(this);
-
+    this.goToContact = this.goToContact.bind(this);
   }
 
-
-  mouseOver(){
-    this.setState({
-      hover:true
-      })
-  }
-
-  mouseOut(){
-    this.setState({
-      hover:false
+  componentDidMount(){
+    setTimeout(() =>{
+      this.setState({
+        loading:false
+      }), 5000;
     })
   }
 
+  goToContact(){
+  console.log('clicked')
+
+  }
 
   render() {
-    if(this.state.hover != true){
-      console.log('false')
-    } else{
-      console.log('true')
+    const loading = this.state.loading;
+    if(loading){
+      return <div className="loader"></div>;
     }
 
+
     return (
-      <div className="container App">
+      <div className="App container ">
         <Header />
-        <div className="row content">
-          <div className="col-md-6 col-sm-6 blur" id="photography">
-            <div className="container-a1">
-              <ul className="caption-style-1">
-                <img src={require('../images/ant_man.png')}  onMouseOver={this.mouseOver} onMouseOut={this.mouseOut} />
-                <div className={this.state.hover ? "caption" : "caption-hidden"}>
-
-                      <h1>Photography</h1>
-
-
-                </div>
-              </ul>
-            </div>
+        <div className="caption-style-1 row">
+          <div className="hover-img col-lg-5 col-md-5 col-sm-5 nopadding"><Link to="/photography" id="links">
+              <img
+                src={require("../images/cap_A.png")}
+                className="image"
+              />
+              <div className="overlay img-cap">
+                <div className="text">Photography</div>
+              </div>
+              </Link>
           </div>
-
+          <div className="col-lg-2 col-md-2 col-sm-2">
+          </div>
+          <div className="hover-img col-lg-5 col-md-5 col-sm-5 nopadding"><Link to="/filmography" id="links">
+            <img
+              src={require("../img/chaps_1x.jpg")}
+              className="image"
+            />
+            <div className="overlay">
+              <div className="text">Videography</div>
+            </div>
+            </Link>
+            </div>
         </div>
+        <br></br>
 
-        <h4>CONTACT</h4>
-
-
+          <h4><Link to="/contact" id="links">CONTACT</Link></h4>
 
       </div>
     );
