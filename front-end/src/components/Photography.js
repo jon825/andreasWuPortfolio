@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import "../App.css";
+import axios from "axios";
 
 const images = [
   { id: 0, string: "DSC_0398" },
@@ -15,16 +16,36 @@ const images = [
 ];
 
 class Photography extends Component {
+  constructor(){
+    super();
+    this.state = {
+      images:[]
+    }
+  }
+
+  componentDidMount(){
+    axios.get("http://localhost:8080/api/images/")
+      .then((res)=>{
+        this.setState({
+          images:res.data
+        })
+      })
+  }
+
+
   render() {
-    let imagesArray = images.map((image, i) => {
-      return (
-        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <img src={require(`../img/${image.string}.jpg`)} key={image.id} className="img-responsive photoGallery" />
-        </div>
-
-
-      );
-    });
+    console.log(this.state.images);
+    let imagesArray;
+    if(this.state.length != 0){
+       imagesArray = this.state.images.map((image, i) => {
+        console.log(image.filename)
+        return (
+          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12" key={image.id} >
+            <img src={`http:localhost:8080/DSC_0531.jpg`} className="img-responsive photoGallery" />
+          </div>
+        );
+      });
+     }
 
     return (
       <div className="App container">

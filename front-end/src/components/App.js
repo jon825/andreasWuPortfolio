@@ -12,34 +12,23 @@ class App extends Component {
     super();
     this.state = {
       loading: true,
-      images: []
     };
 
   }
 
   componentDidMount() {
     setTimeout(() => {
-    axios.get('http://localhost:8080/api/images')
-      .then(res =>{
+
         this.setState({
-          images:res.data,
           loading:false
-        })
       }),
         6000;
     });
   }
 
 
-
-
-  goToContact() {
-    console.log("clicked");
-  }
-
   render() {
     const loading = this.state.loading;
-    console.log(this.state.images)
 
     if (loading) {
       return <div className="loader" />;
