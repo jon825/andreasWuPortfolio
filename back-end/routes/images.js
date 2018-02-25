@@ -4,9 +4,9 @@ const multer = require('multer');
 
 
 const storage = multer.diskStorage({
-  // destination:(req, file, cb) =>{
-  //   cb(null, './uploads');
-  // },
+  destination:(req, file, cb) =>{
+    cb(null, './uploads');
+  },
   filename:(req, file, cb) =>{
     cb(null, file.originalname);
 
@@ -24,28 +24,25 @@ Image.where({})
 })
 
 router.get('/', (req, res)=>{
-  console.log(req)
-  res.send(data)
-  // const where = {};
-  // for(let key in req.query){
-  //   if(attributes.includes(key)){
-  //     where[key] = req.query[key];
-  //   }
-  // }
-  // Image.where(where)
-  // .fetchAll({})
-  // .then(images =>{
-  //   res.send(images);
-  // })
-  // .catch(e=>{
-  //   console.log(e);
-  //   res.status(500).send(e);
-  // })
+  const where = {};
+  for(let key in req.query){
+    if(attributes.includes(key)){
+      where[key] = req.query[key];
+    }
+  }
+  Image.where(where)
+  .fetchAll({})
+  .then(images =>{
+    res.send(images);
+  })
+  .catch(e=>{
+    console.log(e);
+    res.status(500).send(e);
+  })
 })
 
 
 router.post('/upload', upload.single('myImage'), (req, res) =>{
-  console.log(req.file);
   res.send('image uploaded');
   const newImage = {};
   for(let key in req.file){
@@ -55,12 +52,14 @@ router.post('/upload', upload.single('myImage'), (req, res) =>{
   }
   new Image(newImage)
     .save()
-    .then(image =>{
-      res.json(image.attributes);
-    })
+    // .then(image =>{
+    //   res.json(image.attributes);
+    // })
     .catch(e=>{
       res.status(500).send(e)
     })
+    console.log(Image)
+
 })
 
 module.exports = router;

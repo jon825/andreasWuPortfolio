@@ -1,6 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists("images", function(table) {
-    table.integer("id").primary(); // adds incrementing int for id
+    table.increments("id").primary(); // adds incrementing int for id
     table
       .timestamp("created_at")
       .notNullable()
@@ -15,8 +15,6 @@ exports.up = function(knex, Promise) {
       .string("path") // adds a string column
       .unique() // which has to be unique
       .notNullable(); // and is required
-
-
   });
 };
 
