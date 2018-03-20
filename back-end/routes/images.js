@@ -36,7 +36,6 @@ router.get('/', (req, res)=>{
     res.send(images);
   })
   .catch(e=>{
-    console.log(e);
     res.status(500).send(e);
   })
 })
@@ -58,7 +57,6 @@ router.post('/upload', upload.single('myImage'), (req, res) =>{
     .catch(e=>{
       res.status(500).send(e)
     })
-    console.log(Image)
 
 })
 

@@ -15,6 +15,11 @@ exports.up = function(knex, Promise) {
       .string("path") // adds a string column
       .unique() // which has to be unique
       .notNullable(); // and is required
+
+      // table
+      //   .string("location")
+      //   .unique()
+      //   .notNullable();
   });
 };
 

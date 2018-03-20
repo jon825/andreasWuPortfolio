@@ -1,0 +1,318 @@
+/*
+* Template Name: PRO Card - Material Resume / CV / vCard Template
+* Author: lmpixels
+* Author URL: http://themeforest.net/user/lmpixels
+* Version: 1.0
+*/
+
+/* =============================================================================
+
+1. Fonts
+2. General styles (Buttons, Inputs, Typography)
+3. Home Page
+4. Subpages changer
+5. Site header (Panel with logo & navigation)
+6. Site content
+7. Subpages
+  7.1. Home subpage
+  7.2. About Me subpage
+  7.3. Resume subpage
+  7.4. Portfolio subpage
+  7.5. Blog subpage
+  7.6. Contact subpage
+8. Sliders (testimonials & portfolio carousels)
+9. Portfolio Full info page
+10. Single Page Layout (Blog Post page ...)
+11. Blog post page
+12. Media Queries
+
+============================================================================= */
+
+
+/* =============================================================================
+2. General styles
+============================================================================= */
+
+body{
+  font-family: 'Alegreya', serif;
+  line-height: 26.4px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+}
+
+.container-fluid{
+  padding:0 60px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration:none;
+  color:black;
+  outline:none;
+  transition: .5s ease-out;
+}
+
+a:hover{
+  color:gray;
+  text-decoration: none;
+  transition: .5s ease;
+}
+
+h5{
+  letter-spacing: 1.5px;
+}
+
+img{
+  height:100%;
+  width:100%;
+  margin:;
+}
+
+span{
+  font-weight: bolder;
+}
+
+
+
+
+/* =============================================================================
+3. Site Header
+============================================================================= */
+
+header{
+  height:140px;
+  font-family: 'Nunito', sans-serif;
+
+}
+
+.header-title{
+}
+
+
+.header-menu{
+
+}
+
+ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+ text-align: center;
+}
+
+li{
+  margin:30px;
+  float:left;
+}
+
+
+/* =============================================================================
+3. About
+============================================================================= */
+
+.about-img{
+  height:100%;
+  width:100%;
+  padding:0 50px;
+}
+
+.about-info{
+  padding:50px;
+}
+
+
+
+
+/* =============================================================================
+3. Photography Page
+============================================================================= */
+
+.photoGallery{
+}
+
+
+
+/* =============================================================================
+3. Contact Page
+============================================================================= */
+
+.contact-page form{
+  padding:10px 200px 0 0;
+}
+
+.contact-page{
+  padding:50px;
+}
+
+.contact-name{
+}
+
+.form-control{
+  background-color: #f4f4f4;
+}
+
+
+
+/* =============================================================================
+3. Admin Page
+============================================================================= */
+
+.adminPage{
+  height:100%;
+  padding:50px;
+  border-radius:10px;
+}
+
+.adminPage input{
+  width:50%;
+  margin:auto;
+  display:block;
+
+}
+
+.adminPage label{
+  width:50%;
+  margin:auto;
+  margin-bottom:10px;
+  display:block;
+}
+
+
+
+
+
+
+
+/*
+body{
+  text-align: center;
+  font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  padding-top:40px;
+}*/
+/*
+.header{
+  border:solid;
+}
+
+
+h1{
+  font-size:55px;
+  letter-spacing: 3px;
+}
+
+h5{
+  letter-spacing: 1.5px;
+}
+
+h4{
+  letter-spacing: 1.5px;
+}
+
+.photo-gallery img{
+  width: 100%;
+  height: auto;
+  margin:15px 0 15px 0;
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.5s ease-out;
+}
+
+.photo-gallery img:hover{
+  cursor:pointer;
+    margin-top: 5px;
+}
+
+.front-page{
+  height:80%;
+}
+
+.image{
+  width:100%;
+  height:auto;
+  padding:20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:20px;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.hover-img:hover .overlay {
+  opacity: 1;
+    cursor: pointer
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.nopadding{
+  padding:0 !important;
+}
+
+#links {
+  cursor: pointer;
+  text-decoration:none;
+  color:black;
+}
+
+#links:hover{
+  color:gray;
+    transition: .5s ease;
+}
+
+
+.imgPreview img{
+  width:100%;
+  height:auto;
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 6em;
+  height: 6em;
+  border: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000000;
+  border-radius: 50%;
+  animation: 1.1s infinite linear;
+}
+
+@keyframes {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+.sendButton{
+  padding-top:100px;
+}
+*/

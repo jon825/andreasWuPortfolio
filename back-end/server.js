@@ -12,15 +12,18 @@ const accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 
 
 
 
+// for parsing application/json
+app.use(bodyParser.json());
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded()); // for parsing application/x-www-form-urlencoded
+// for parsing application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded());
+
 app.use(express.static('uploads'));
 
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Accept");
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   next();
 });
