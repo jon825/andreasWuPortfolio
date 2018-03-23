@@ -28,10 +28,10 @@ class Contact extends Component {
             <div className="row">
               <div className="col">
                 <div className="form-group">
-                  <label for="exampleFormControlInput1">First Name *</label>
+                  <label>First Name *</label>
                   <input
                     type="firstName"
-                    class="form-control"
+                    className="form-control"
                     id="formControlFirstName"
                     placeholder=""
                   />
@@ -39,10 +39,10 @@ class Contact extends Component {
               </div>
               <div className="col">
                 <div className="form-group">
-                  <label for="exampleFormControlInput1">Last Name *</label>
+                  <label>Last Name *</label>
                   <input
                     type="lastName"
-                    class="form-control"
+                    className="form-control"
                     id="formControlLastName"
                     placeholder=""
                   />
@@ -52,10 +52,10 @@ class Contact extends Component {
             <div className="row">
               <div className="col">
                 <div className="form-group">
-                  <label for="exampleFormControlInput1">Email Address *</label>
+                  <label>Email Address *</label>
                   <input
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     id="formControlEmailAddress"
                     placeholder=""
                   />
@@ -65,10 +65,10 @@ class Contact extends Component {
             <div className="row">
               <div className="col">
                 <div className="form-group">
-                  <label for="exampleFormControlInput1">Subject *</label>
+                  <label>Subject *</label>
                   <input
                     type="subject"
-                    class="form-control"
+                    className="form-control"
                     id="formControlSubject"
                     placeholder=""
                   />
@@ -77,8 +77,8 @@ class Contact extends Component {
             </div>
             <div className="row">
               <div className="col">
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">
+                <div className="form-group">
+                  <label>
                     Message *
                   </label>
                   <textarea
@@ -98,45 +98,6 @@ class Contact extends Component {
             </div>
           </form>
         </div>
-        /*
-          <div className="row">
-            <div className="col-lg-6">
-              <TextField
-                hintText="Name"
-                underlineFocusStyle={styles.underlineStyle}
-              />
-              <br />
-              <br />
-
-              <TextField
-                hintText="Email"
-                underlineFocusStyle={styles.underlineStyle}
-              />
-              <br />
-              <br />
-
-              <TextField
-                hintText="Phone"
-                underlineFocusStyle={styles.underlineStyle}
-              />
-            </div>
-            <div className="col-lg-6">
-              <TextField
-                hintText="Message Field"
-                underlineFocusStyle={styles.underlineStyle}
-                multiLine={true}
-                rows={1}
-                fullWidth={true}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col sendButton">
-              <button>Send</button>
-            </div>
-          </div>
-        </div>
-      */
     );
   }
 }

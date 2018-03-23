@@ -13,9 +13,21 @@ const knex = require('knex')({
 const bookshelf = require('bookshelf')(knex);
 
 const Image = bookshelf.Model.extend({
-    tableName: 'images' // what you named your table as
+  tableName: 'images'
 });
 
+const Video = bookshelf.Model.extend({
+  tableName: 'videos'
+});
+
+const Admin = bookshelf.Model.extend({
+  tableName: 'admin'
+});
+
+
+
 module.exports = {
-    Image
-}
+    Image,
+    Video,
+    Admin
+};

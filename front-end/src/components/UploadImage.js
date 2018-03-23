@@ -9,12 +9,23 @@ class UploadImage extends React.Component {
     this.state = {
       file: "",
       imagePreviewUrl: "",
-      images: []
+      images: [],
+      loading:true,
+      auth:false
     };
 
     this._handleImageChange = this._handleImageChange.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
   }
+
+  componentDidMount(){
+    if(localStorage.authToken !== undefined && localStorage.authToken !== null){
+      console.log(localStorage)
+      // window.location.href = "/uploadimage";
+    }
+
+  }
+
 
   _handleImageChange(selectorFiles: FileList) {
     let reader = new FileReader();
@@ -26,40 +37,43 @@ class UploadImage extends React.Component {
         imagePreviewUrl: reader.result
       });
     }
-
     reader.readAsDataURL(file)
-
-
-
-    // let url = reader.readAsDataURL(file[0]);
-    //  reader.onloadend = function (e) {
-    //     this.setState({
-    //         imgSrc: [reader.result]
-    //     })
-    //   }.bind(this);
-    // console.log('url', url)
-     // Would see a path?
-    // // TODO: concat files
   }
 
   _handleSubmit(e) {
     e.preventDefault();
     const data = new FormData();
-    console.log(e.target);
-    data.append("myImage", this.uploadInput.files[0]);
-    axios
-      .post("http://localhost:8080/api/images/upload", data)
+    data.append("uploadFile", this.uploadInput.files[0]);
+    if(this.uploadInput.files[0].name.includes('mp4')){
+      console.log('sent')
+      axios.post("http://localhost:3000/api/videos/upload/video", data)
+      .then(response => {
+        response;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+
+    }
+    else if(this.uploadInput.files[0].name.includes('jpg')){
+      axios.post("http://localhost:3000/api/images/upload/image", data)
       .then(response => {
         response;
       })
       .catch(error => {
         console.log(error);
       });
+    }
+
+
+
+
   }
 
   render() {
     let imagePreviewUrl = this.state.imagePreviewUrl;
     let $imagePreview = null;
+
     if (imagePreviewUrl) {
       $imagePreview = <img src={imagePreviewUrl} />;
     } else {
@@ -67,6 +81,8 @@ class UploadImage extends React.Component {
         <div className="previewText">Please select an Image for Preview</div>
       );
     }
+
+
 
     return (
       <div>
@@ -80,7 +96,7 @@ class UploadImage extends React.Component {
                 <input
                   className="fileInput"
                   type="file"
-                  name="myImage"
+                  name="uploadFile"
                   onChange={e => this._handleImageChange(e.target.files)}
                   ref={ref => {
                     this.uploadInput = ref;
@@ -99,6 +115,7 @@ class UploadImage extends React.Component {
       </div>
     );
   }
+
 }
 
 export default UploadImage;

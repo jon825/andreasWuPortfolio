@@ -15,6 +15,15 @@ class Header extends Component {
                 </Link>
               </h2>
             </div>
+            </div>
+            </div>
+            <div className="row">
+            <div className="col" align="center">
+            <div className="header-subtitle">
+            <h3>Telling Stories Through The Lends</h3>
+            </div>
+            </div>
+            </div>
             <div className="row">
               <div className="col" align="center">
                 <div className="header-menu">
@@ -42,8 +51,7 @@ class Header extends Component {
                   </ul>
                 </div>
               </div>
-            </div>
-          </div>
+
         </div>
       </header>
     );

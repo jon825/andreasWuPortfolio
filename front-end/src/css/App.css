@@ -81,17 +81,22 @@ span{
 ============================================================================= */
 
 header{
-  height:140px;
+  padding-top:20px;
+  height:200px;
   font-family: 'Nunito', sans-serif;
-
+  margin:20px 0;
 }
 
 .header-title{
+
 }
 
+.header-subtitle{
+  margin-top:13px;
+}
 
 .header-menu{
-
+  margin:20px;
 }
 
 ul{
@@ -102,8 +107,8 @@ ul{
 }
 
 li{
-  margin:30px;
-  float:left;
+  margin:10px 30px;
+  display: inline-block;
 }
 
 
@@ -129,6 +134,7 @@ li{
 ============================================================================= */
 
 .photoGallery{
+
 }
 
 
@@ -153,19 +159,20 @@ li{
 }
 
 
-
 /* =============================================================================
 3. Admin Page
 ============================================================================= */
 
 .adminPage{
   height:100%;
-  padding:50px;
+  padding:15px 50px;
   border-radius:10px;
+  width:50%;
+  margin:50px auto;
 }
 
 .adminPage input{
-  width:50%;
+  width:100%;
   margin:auto;
   display:block;
 
@@ -173,15 +180,15 @@ li{
 
 .adminPage label{
   width:50%;
-  margin:auto;
   margin-bottom:10px;
   display:block;
 }
 
+.adminPage button{
 
-
-
-
+  margin-bottom:10px;
+  display:block;
+}
 
 
 /*

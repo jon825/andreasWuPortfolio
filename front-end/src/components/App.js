@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import Photography from "./Photography";
-import Contact from "./Contact";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import axios from "axios";
 import "../css/App.css";
@@ -9,6 +7,7 @@ import "../css/App.css";
 
 class App extends Component {
   render(){
+    console.log(localStorage)
     return (
       <div className="container-fluid">
         <Header />

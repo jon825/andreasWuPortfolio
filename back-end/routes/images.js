@@ -5,11 +5,10 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination:(req, file, cb) =>{
-    cb(null, './uploads');
+    cb(null, './uploads/images');
   },
   filename:(req, file, cb) =>{
     cb(null, file.originalname);
-
   }
 });
 
@@ -41,7 +40,7 @@ router.get('/', (req, res)=>{
 })
 
 
-router.post('/upload', upload.single('myImage'), (req, res) =>{
+router.post('/upload/image', upload.single('uploadFile'), (req, res) =>{
   res.send('image uploaded');
   const newImage = {};
   for(let key in req.file){
@@ -51,9 +50,6 @@ router.post('/upload', upload.single('myImage'), (req, res) =>{
   }
   new Image(newImage)
     .save()
-    // .then(image =>{
-    //   res.json(image.attributes);
-    // })
     .catch(e=>{
       res.status(500).send(e)
     })
