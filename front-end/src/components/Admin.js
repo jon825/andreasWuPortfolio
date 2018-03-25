@@ -22,7 +22,7 @@ class Admin extends Component {
       password: this.state.password
     };
     axios
-      .post("http://localhost:8080/api/admin/login", admin)
+      .post("/api/admin/login", admin)
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data.token);

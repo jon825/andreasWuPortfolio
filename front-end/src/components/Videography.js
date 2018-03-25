@@ -14,7 +14,7 @@ class Videography extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:8080/api/videos/").then(res => {
+    axios.get("/api/videos/").then(res => {
       this.setState({
         images: res.data
       });
@@ -27,7 +27,7 @@ class Videography extends Component {
     let imagesArray;
     if (this.state.length != 0) {
       imagesArray = this.state.images.map((image, i) => {
-        let link = `http://localhost:8080/${image.filename}#t=2`;
+        let link = `/${image.filename}#t=2`;
             console.log(link)
 
         return (

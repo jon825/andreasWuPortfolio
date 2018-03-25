@@ -28,11 +28,6 @@ class Header extends Component {
               <div className="col" align="center">
                 <div className="header-menu">
                   <ul>
-                    <Link to="/about" id="img-links">
-                      <li>
-                        <h5>About</h5>
-                      </li>
-                    </Link>
                     <Link to="/photography" id="img-links">
                       <li>
                         <h5>Photography</h5>

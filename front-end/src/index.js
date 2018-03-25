@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import App from "./components/App";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
-import About from "./components/About";
 import Admin from "./components/Admin";
 import AdminSignUp from "./components/AdminSignUp";
 import Photography from "./components/Photography";
@@ -16,7 +15,6 @@ ReactDOM.render(
     <App>
       <Switch>
         <Route exact path="/" exact component={Home} />
-        <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/photography" exact component={Photography} />
         <Route path="/videography" exact component={Videography} />

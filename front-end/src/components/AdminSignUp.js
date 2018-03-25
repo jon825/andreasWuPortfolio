@@ -18,7 +18,7 @@ class AdminSignUp extends Component {
   formSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    if (this.state.password != this.state.confirmPassword){
+    if (this.state.password !== this.state.confirmPassword){
       this.setState({
         warning: "Password does not match"
       })
@@ -27,7 +27,7 @@ class AdminSignUp extends Component {
         username:this.state.username,
         password:this.state.password
       };
-      axios.post("http://localhost:8080/api/admin/encrypt", admin)
+      axios.post("/api/admin/encrypt", admin)
       .then(response => {
         response
         window.location.href = "/admin";
