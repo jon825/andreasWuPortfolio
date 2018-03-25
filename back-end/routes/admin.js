@@ -2,7 +2,9 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { Admin } = require("../models");
+const authorize = require("../middleware/authorize");
 const bodyParser = require("body-parser");
+
 
 let attributes;
 
@@ -54,11 +56,11 @@ router.post("/login", (req, res) => {
         data.attributes.password,
         (err, result) => {
           if (result == true) {
-            let token = jwt.sign({ username: admin.username }, "andreaswukey");
-            res.json({ token: token });
-            console.log('token =', token);
+            let token = jwt.sign({username: admin.username}, "andreaswukey");
+            res.json({ token: token});
           } else {
               res
+              console.log(result)
               .status(403)
               .send({token:null});
               }
@@ -69,6 +71,11 @@ router.post("/login", (req, res) => {
       res.status(500).send(e);
     });
 });
+
+router.get('/privatedata',authorize, (req,res) => {
+    res.json('I am sensitive and protected user data');
+});
+
 
 
 module.exports = router;

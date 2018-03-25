@@ -27,16 +27,18 @@ class Videography extends Component {
     let imagesArray;
     if (this.state.length != 0) {
       imagesArray = this.state.images.map((image, i) => {
-        let link = `http://localhost:8080/${image.filename}`;
+        let link = `http://localhost:8080/${image.filename}#t=2`;
+            console.log(link)
+
         return (
-          <div className="col-lg-3 mb-3 photoGallery" key={image.id}>
-            <Player playsInline poster={link} src={link} />{" "}
+          <div className="col-lg-4 mb-3 photoGallery" key={image.id}>
+            <Player playsInline src={link} />
           </div>
         );
       });
     }
     return (
-      <div>
+      <div className="videography-page">
         <div className="row">{imagesArray}</div>
       </div>
     );

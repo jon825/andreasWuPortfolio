@@ -7,19 +7,14 @@
 
 /* =============================================================================
 
-1. Fonts
-2. General styles (Buttons, Inputs, Typography)
-3. Home Page
-4. Subpages changer
-5. Site header (Panel with logo & navigation)
-6. Site content
-7. Subpages
-  7.1. Home subpage
-  7.2. About Me subpage
-  7.3. Resume subpage
-  7.4. Portfolio subpage
-  7.5. Blog subpage
-  7.6. Contact subpage
+1. General styles (Buttons, Inputs, Typography)
+2. Site header (Panel with logo & navigation)
+
+3. About Page
+4. Photography Page
+5. Videography content
+7. Contact Page
+
 8. Sliders (testimonials & portfolio carousels)
 9. Portfolio Full info page
 10. Single Page Layout (Blog Post page ...)
@@ -30,7 +25,7 @@
 
 
 /* =============================================================================
-2. General styles
+1. General styles
 ============================================================================= */
 
 body{
@@ -63,6 +58,10 @@ h5{
   letter-spacing: 1.5px;
 }
 
+h2{
+  font-size:40px;
+}
+
 img{
   height:100%;
   width:100%;
@@ -74,17 +73,15 @@ span{
 }
 
 
-
-
 /* =============================================================================
-3. Site Header
+2. Site Header
 ============================================================================= */
 
 header{
   padding-top:20px;
-  height:200px;
+  height:180px;
   font-family: 'Nunito', sans-serif;
-  margin:20px 0;
+  margin:10px 0;
 }
 
 .header-title{
@@ -92,11 +89,10 @@ header{
 }
 
 .header-subtitle{
-  margin-top:13px;
+  margin-top:0px;
 }
 
 .header-menu{
-  margin:20px;
 }
 
 ul{
@@ -113,7 +109,33 @@ li{
 
 
 /* =============================================================================
-3. About
+2. Home Page
+============================================================================= */
+
+.slideShow{
+  width:50%;
+
+}
+
+.slideShow img{
+  width:100%;
+  height:100%;
+  border-radius:10px;
+
+}
+
+.react-slideshow-container .nav{
+  opacity:0.3;
+}
+
+.react-slideshow-container .nav:hover{
+  opacity:0.5;
+}
+
+
+
+/* =============================================================================
+3. About Page
 ============================================================================= */
 
 .about-img{
@@ -130,17 +152,85 @@ li{
 
 
 /* =============================================================================
-3. Photography Page
+4. Photography Page
 ============================================================================= */
 
 .photoGallery{
 
 }
 
+.photoGallery img{
+  width: 100%;
+  height:auto;
+
+}
+
+.photoGallery img:hover{
+  cursor:pointer;
+}
+
+/* =============================================================================
+5. Videography Page
+============================================================================= */
+
+
+
+
 
 
 /* =============================================================================
-3. Contact Page
+6. AdminSignUp Page
+============================================================================= */
+
+.adminSignUp-page{
+  height:100%;
+  padding:15px 50px;
+  border-radius:10px;
+  width:50%;
+  margin:50px auto;
+}
+
+.adminSignUp-page input{
+  width:100%;
+  margin:auto;
+  display:block;
+
+}
+
+.adminSignUp-page label{
+  width:50%;
+  margin-bottom:10px;
+  display:block;
+}
+
+.adminSignUp-page button{
+
+  margin-bottom:10px;
+  display:block;
+}
+
+
+/* =============================================================================
+3. UploadImage Page
+============================================================================= */
+
+
+.previewComponent{
+  margin:50px 0;
+}
+
+
+/* =============================================================================
+3. Admin Page
+============================================================================= */
+
+.admin-page{
+  padding:40px 30%;
+}
+
+
+/* =============================================================================
+7. Contact Page
 ============================================================================= */
 
 .contact-page form{
@@ -151,7 +241,7 @@ li{
   padding:50px;
 }
 
-.contact-name{
+.contact-page{
 }
 
 .form-control{
@@ -159,36 +249,9 @@ li{
 }
 
 
-/* =============================================================================
-3. Admin Page
-============================================================================= */
 
-.adminPage{
-  height:100%;
-  padding:15px 50px;
-  border-radius:10px;
-  width:50%;
-  margin:50px auto;
-}
 
-.adminPage input{
-  width:100%;
-  margin:auto;
-  display:block;
 
-}
-
-.adminPage label{
-  width:50%;
-  margin-bottom:10px;
-  display:block;
-}
-
-.adminPage button{
-
-  margin-bottom:10px;
-  display:block;
-}
 
 
 /*

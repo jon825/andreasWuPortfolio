@@ -7,7 +7,8 @@ class Admin extends Component {
     super();
     this.state = {
       username: null,
-      password: null
+      password: null,
+      warning:""
     };
 
     this.formSubmit = this.formSubmit.bind(this);
@@ -24,13 +25,19 @@ class Admin extends Component {
       .post("http://localhost:8080/api/admin/login", admin)
       .then((response) => {
         if (response.status === 200) {
-
-          localStorage.authToken = "hello world";
+          console.log(response.data.token);
+          localStorage.authToken = response.data.token;
+            this.setState({
+              warning:'Log In Successful!'
+            })
           window.location.href = "/uploadimage";
         }
       })
       .catch(error => {
-        console.log(error);
+        this.setState({
+          warning:'Invalid Username/Password!'
+        })
+        console.log('error', error);
       });
   }
 
@@ -50,7 +57,19 @@ class Admin extends Component {
   render() {
 
     return (
-      <form className="adminPage" onSubmit={this.formSubmit}>
+      <form className="admin-page" onSubmit={this.formSubmit}>
+        <div className="row">
+        <div className="col" align="center">
+          {this.state.warning}
+
+        </div>
+        </div>
+        <div className="row">
+          <div className="col" align="center">
+            Please Type In Username & Password
+          </div>
+        </div>
+        <br />
         <div className="row">
           <div className="col">
             <div className="form-group">

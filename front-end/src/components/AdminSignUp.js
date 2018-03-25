@@ -57,7 +57,7 @@ class AdminSignUp extends Component {
   render() {
     console.log(this.state)
     return (
-      <form className="adminPage" onSubmit={this.formSubmit}>
+      <form className="adminSignUp-page" onSubmit={this.formSubmit}>
         <div className="row">
           <div className="col">
             <div className="form-group">

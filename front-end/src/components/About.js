@@ -5,7 +5,7 @@ import "../css/App.css";
 class About extends Component {
   render() {
     return (
-      <div>
+      <div className="about-page">
       <div className="row">
         <div className="col about-info">
           <p>

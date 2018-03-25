@@ -30,7 +30,7 @@ class Photography extends Component {
        imagesArray = this.state.images.map((image, i) => {
         let link = `http://localhost:8080/${image.filename}`
         return (
-          <div className="col-lg-3 mb-3 photoGallery" key={image.id} >
+          <div className="col-lg-3 mb-3 col-md-4 photoGallery" key={image.id} >
             <img src={link} className="img-responsive" />
           </div>
         );
@@ -38,7 +38,7 @@ class Photography extends Component {
      }
 
     return (
-      <div>
+      <div className="photography-page">
 
         <div className="row">
           {imagesArray}
