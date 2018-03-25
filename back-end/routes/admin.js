@@ -5,7 +5,6 @@ const { Admin } = require("../models");
 const authorize = require("../middleware/authorize");
 const bodyParser = require("body-parser");
 
-
 let attributes;
 
 Admin.where({})
@@ -42,6 +41,8 @@ router.post("/encrypt", (req, res) => {
       newAdmin.save().then(admin => {
         console.log(admin);
       });
+      let token = jwt.sign({ username: admin.username }, "andreaswukey");
+      res.json({ token: token });
     });
   });
 });
@@ -56,26 +57,22 @@ router.post("/login", (req, res) => {
         data.attributes.password,
         (err, result) => {
           if (result == true) {
-            let token = jwt.sign({username: admin.username}, "andreaswukey");
-            res.json({ token: token});
+            let token = jwt.sign({ username: admin.username }, "andreaswukey");
+            res.json({ token: token });
           } else {
-              res
-              console.log(result)
-              .status(403)
-              .send({token:null});
-              }
-            })
-        })
+            res.status(403).send({ token: null });
+          }
+        }
+      );
+    })
     .catch(e => {
       console.log(e);
       res.status(500).send(e);
     });
 });
 
-router.get('/privatedata',authorize, (req,res) => {
-    res.json('I am sensitive and protected user data');
+router.get("/privatedata", authorize, (req, res) => {
+  res.json("I am sensitive and protected user data");
 });
-
-
 
 module.exports = router;

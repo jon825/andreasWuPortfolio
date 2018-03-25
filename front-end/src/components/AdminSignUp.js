@@ -29,8 +29,8 @@ class AdminSignUp extends Component {
       };
       axios.post("http://localhost:8080/api/admin/encrypt", admin)
       .then(response => {
-        response;
-        window.location.href = "/photography";
+        response
+        window.location.href = "/admin";
       })
       .catch(error =>{
         console.log(error);

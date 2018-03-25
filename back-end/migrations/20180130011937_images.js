@@ -16,10 +16,6 @@ exports.up = function(knex, Promise) {
       .unique() // which has to be unique
       .notNullable(); // and is required
 
-      // table
-      //   .string("location")
-      //   .unique()
-      //   .notNullable();
   });
 };
 

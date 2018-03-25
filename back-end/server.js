@@ -35,8 +35,9 @@ app.use('/api/images', images_routes);
 
 
 
-app.listen(PORT, () => {
-    console.log(`Listening on port: ${PORT}`)
+app.listen(PORT,() => {
+  console.log("Listening on Port:%s",PORT)
+  console.log("Stop with Ctrl+C");
 });
 
 
