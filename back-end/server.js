@@ -30,9 +30,6 @@ app.use("/api/admin", admin_routes);
 app.use("/api/videos", videos_routes);
 app.use("/api/images", images_routes);
 
-app.get("*", (req, res) => {
-  res.sendFile("index.html", { root: __dirname + "./../build" });
-});
 
 app.listen(PORT, () => {
   console.log("Listening on Port:%s", PORT);
