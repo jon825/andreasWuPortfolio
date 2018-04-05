@@ -12,8 +12,7 @@ const videos_routes = require("./routes/videos");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-app.use(express.static("uploads/images"));
-app.use(express.static("uploads/videos"));
+app.use(express.static("uploads"));
 app.use(express.static(__dirname + "./../build"));
 
 app.use(function(req, res, next) {

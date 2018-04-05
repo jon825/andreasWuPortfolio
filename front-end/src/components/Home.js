@@ -16,7 +16,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get("/api/images/").then(res => {
+    axios.get("http://localhost:8080/api/images/").then(res => {
       this.setState({
         images: res.data
       });
@@ -27,11 +27,13 @@ class Home extends Component {
     let images;
     if (this.state.images.length !== 0) {
       images = this.state.images.map((image, index) => {
-        return `/${image.filename}`;
+        return `http://localhost:8080/images/${image.filename}`;
       });
     } else{
       return images=[];
     }
+    console.log(this.state.images)
+
 
 
     return (
