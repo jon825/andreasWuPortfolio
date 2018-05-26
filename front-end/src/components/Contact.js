@@ -69,7 +69,7 @@ class Contact extends Component {
         <br />
         <form onSubmit={this.formSubmit}>
           <div className="row">
-            <div className="col">
+            <div className="col-lg-6 col-xs-12">
               <div className="form-group">
                 <label>First Name *</label>
                 <input
@@ -81,7 +81,7 @@ class Contact extends Component {
                 />
               </div>
             </div>
-            <div className="col">
+            <div className="col-lg-6 col-xs-12">
               <div className="form-group">
                 <label>Last Name *</label>
                 <input
@@ -95,7 +95,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-lg-12 col-xs-12">
               <div className="form-group">
                 <label>Email Address *</label>
                 <input
@@ -109,7 +109,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-lg-12 col-xs-12">
               <div className="form-group">
                 <label>Subject *</label>
                 <input
@@ -123,7 +123,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-lg-12 col-xs-12">
               <div className="form-group">
                 <label>Message *</label>
                 <textarea

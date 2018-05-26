@@ -51,7 +51,7 @@ class UploadImage extends React.Component {
       data.append("uploadFile", this.uploadInput.files[0]);
       if (this.uploadInput.files[0].name.includes("mp4")) {
         axios
-          .post("/api/videos/upload/video", data)
+          .post("http://localhost:8080/api/videos/upload/video", data)
           .then(response => {
             response;
             this.setState({
@@ -67,7 +67,7 @@ class UploadImage extends React.Component {
           });
       } else if (this.uploadInput.files[0].name.includes("jpg")) {
         axios
-          .post("/api/images/upload/image", data)
+          .post("http://localhost:8080/api/images/upload/image", data)
           .then(response => {
             response;
             this.setState({
@@ -104,7 +104,7 @@ class UploadImage extends React.Component {
     return (
       <div className="uploadImage-page">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-xs-12">
             <div className="row">
               <div className="col" align="center">
                 <div className="previewComponent">
@@ -139,7 +139,7 @@ class UploadImage extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-xs-12">
             <div className="imgPreview">{$imagePreview}</div>
           </div>
         </div>

@@ -8,7 +8,7 @@ class Header extends Component {
       <header>
         <div className="row">
           <div className="col" align="center">
-            <div className="header-title">
+            <div>
               <h2>
                 <Link to="/" id="links">
                   ANDREAS WU

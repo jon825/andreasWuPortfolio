@@ -22,7 +22,7 @@ class Admin extends Component {
       password: this.state.password
     };
     axios
-      .post("/api/admin/login", admin)
+      .post("http://localhost:8080/api/admin/login", admin)
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data.token);
@@ -59,19 +59,19 @@ class Admin extends Component {
     return (
       <form className="admin-page" onSubmit={this.formSubmit}>
         <div className="row">
-        <div className="col" align="center">
+        <div className="col-lg-12 col-xs-12" align="center">
           {this.state.warning}
 
         </div>
         </div>
         <div className="row">
-          <div className="col" align="center">
+          <div className="col-lg-12 col-xs-12" align="center">
             Please Type In Username & Password
           </div>
         </div>
         <br />
         <div className="row">
-          <div className="col">
+          <div className="col-lg-12 col-xs-12">
             <div className="form-group">
               <label>Username:</label>
               <input
@@ -85,7 +85,7 @@ class Admin extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-lg-12 col-xs-12">
             <div className="form-group">
               <label>Password:</label>
               <input
@@ -100,7 +100,7 @@ class Admin extends Component {
         </div>
         <br />
         <div className="row">
-          <div className="col">
+          <div className="col-lg-12 col-xs-12">
             <button>Sign In</button>
           </div>
         </div>

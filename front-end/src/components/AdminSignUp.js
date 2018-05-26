@@ -27,7 +27,7 @@ class AdminSignUp extends Component {
         username:this.state.username,
         password:this.state.password
       };
-      axios.post("/api/admin/encrypt", admin)
+      axios.post("http://localhost:8080/api/admin/encrypt", admin)
       .then(response => {
         response
         window.location.href = "/admin";
