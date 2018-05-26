@@ -13,7 +13,7 @@ class Photography extends Component {
   }
 
   componentDidMount(){
-    axios.get("http://localhost:8080/api/images/")
+    axios.get("/api/images/")
       .then((res)=>{
         this.setState({
           images:res.data
@@ -27,7 +27,7 @@ class Photography extends Component {
     console.log(this.state.images)
     if(this.state.length != 0){
        imagesArray = this.state.images.map((image, i) => {
-        let link = `http://localhost:8080/images/${image.filename}`
+        let link = `/images/${image.filename}`
         return (
           <div className="col-lg-3 mb-3 col-md-4 photoGallery" key={image.id} >
             <img src={link} className="img-responsive" />

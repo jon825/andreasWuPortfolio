@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const fs = require("fs");
 
 const PORT = process.env.PORT || 8080;
 
@@ -25,9 +24,17 @@ app.use(function(req, res, next) {
   next();
 });
 
+
+
 app.use("/api/admin", admin_routes);
 app.use("/api/videos", videos_routes);
 app.use("/api/images", images_routes);
+
+
+
+app.get('*', (req,res) =>{
+  res.sendFile(__dirname + "./../build/index.html")
+})
 
 
 app.listen(PORT, () => {
