@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 app.use(express.static("uploads"));
-app.use(express.static(__dirname + "./../build"));
+app.use(express.static(__dirname + "/build"));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -33,7 +33,7 @@ app.use("/api/images", images_routes);
 
 
 app.get('*', (req,res) =>{
-  res.sendFile(__dirname + "./../build/index.html")
+  res.sendFile(__dirname + "/build/index.html")
 })
 
 
