@@ -2,31 +2,30 @@ import React, { Component } from "react";
 import Header from "./Header";
 import { Player } from "video-react";
 import axios from "axios";
-
 import "../css/App.css";
+
 
 class Videography extends Component {
   constructor() {
     super();
     this.state = {
-      images: []
+      videos: []
     };
   }
 
   componentDidMount() {
     axios.get("/api/videos/").then(res => {
       this.setState({
-        images: res.data
+        videos: res.data
       });
       console.log(res);
     });
   }
 
   render() {
-    console.log(this.state.images);
-    let imagesArray;
+    let videosArray;
     if (this.state.length != 0) {
-      imagesArray = this.state.images.map((image, i) => {
+      videosArray = this.state.videos.map((image, i) => {
         let link = `/${image.filename}#t=2`;
             console.log(link)
 
@@ -39,7 +38,7 @@ class Videography extends Component {
     }
     return (
       <div className="videography-page">
-        <div className="row">{imagesArray}</div>
+        <div className="row">{videosArray}</div>
       </div>
     );
   }
